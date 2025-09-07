@@ -1,0 +1,29 @@
+.overview_header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+figure {
+  display: flex;
+  align-items: center;
+}
+
+.header_text {
+  color: #393939;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+}
+
+.subtext {
+  color: #575757;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}

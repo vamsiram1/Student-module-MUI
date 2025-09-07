@@ -1,0 +1,23 @@
+.overview_inner_container {
+  margin-top: 20px;
+  padding: 0px 15px 0px 15px;
+}
+
+.line_divider {
+  margin-top: 22px;
+}
+
+.transport_and_live {
+  width: 100%;
+  margin-top: 14px;
+  display: flex;
+  gap:20px;
+}
+
+.transport_details_container {
+  width: 40%;
+}
+
+.live_track_container {
+  width: 60%;
+}

@@ -1,0 +1,25 @@
+.transport_container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+}
+
+.main_part {
+  width: 72%;
+  flex: 1;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.accordian_part {
+  width: 28%;
+  background: #fff;
+  padding: 15px;
+  backdrop-filter: blur(2.3499999046325684px);
+}
+
+.hidden {
+  display: none;
+}

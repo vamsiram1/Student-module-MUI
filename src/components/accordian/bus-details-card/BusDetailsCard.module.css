@@ -1,0 +1,107 @@
+.bus_details_card_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+}
+.left_section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.right_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.text_style {
+  color: #262626;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.right_sec_text {
+  color: #626262;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.seat_capacity_count {
+  width: 61px;
+  height: 21px;
+  display: flex;
+  padding: 2px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 23px;
+  border: 1px solid #3425ff;
+  background: #f2f1ff;
+}
+
+.count {
+  color: #3425ff;
+  text-align: right;
+
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 190.909% */
+}
+
+.divider {
+  margin: 17px auto 17px auto;
+}
+
+.lower_section {
+  display: flex;
+  gap:10px;
+}
+
+.bus_number_box {
+  display: flex;
+  padding: 4px 10px;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  border-radius: 33px;
+  border: 1px solid #3425ff;
+  background: #e8e6ff;
+}
+
+.bus_number {
+  color: #3425ff;
+  text-align: right;    
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 190.909% */
+}
+
+.seats_available_box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.red_seat_icon {
+  display: flex;
+  align-items: center;
+}
+
+.red_seats_text {
+  color: #ff2525;
+  text-align: right;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 190.909% */
+}

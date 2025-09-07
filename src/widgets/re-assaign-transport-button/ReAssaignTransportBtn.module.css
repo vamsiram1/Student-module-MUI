@@ -1,0 +1,25 @@
+.re_ass_trans_button {
+    border:none;
+  display: flex;
+  padding: 8px 34px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  background: #3425ff;
+  margin: 35px auto 0 auto;
+  cursor: pointer;
+
+}
+.arrow_icon {
+  display: flex;
+  align-items: center;
+}
+
+.btn_text {
+  color: var(--Light-Gray-Light-Gray-5, #f6f8f9);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 200% */
+  letter-spacing: -0.072px;
+}

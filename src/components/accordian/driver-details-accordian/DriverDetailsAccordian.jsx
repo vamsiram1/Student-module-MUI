@@ -1,0 +1,76 @@
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
+import styles from "./DriverDetailsAccordian.module.css";
+import accordianHeader from "../../../assets/transport-overview-icons/accordian_header.svg";
+import DriverDetailsCard from "../../../widgets/driver-details-card/DriverDetailsCard";
+const DriverDetailsAccordian = ({ expanded, onChange }) => {
+  return (
+    <Accordion
+      expanded={expanded}
+      onChange={onChange}
+      sx={{
+        "& .MuiAccordionDetails-root ": { padding: "0px 16px 16px" },
+        "&&": {
+          "--Paper-shadow": "none",
+          boxShadow: "none",
+          borderRadius: "10px",
+          border: "1px solid #E6E4F0",
+          background: "rgba(255, 255, 255, 0.40)",
+          backdropFilter: "blur(9.100000381469727px)",
+        },
+        "&::before": { display: "none" },
+        "& .MuiButtonBase-root": {
+          alignItems: "start",
+          padding: "15px 18px 0px 18px",
+        },
+        "&.Mui-expanded": {
+          borderRadius: "10px",
+          border: "1px solid #B4BCFF",
+          background: "rgba(255, 255, 255, 0.30)",
+          boxShadow:
+            "0 8px 16px 0 rgba(0, 0, 0, 0.14), 0 0 2px 0 rgba(0, 0, 0, 0.12)",
+          backdropFilter: "blur(9.100000381469727px)",
+          margin: "0px",
+        },
+        "& .MuiButtonBase-root": {
+          minHeight: "50px",
+        },
+      }}
+    >
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="driver-content"
+        id="driver-content"
+        sx={{
+          "& .MuiAccordionSummary-content": { margin: "0px !important" },
+          "&.Mui-expanded .MuiAccordionSummary-content": {
+            margin: "0px !important",
+          },
+        }}
+      >
+        <Typography component="span">
+          <figure>
+            <img src={accordianHeader} />
+            <p className={styles.header_text}>Driver Details</p>
+          </figure>
+        </Typography>
+      </AccordionSummary>
+
+      <AccordionDetails id="driver-content">
+        <Typography component="div">
+          {/* code */}
+          <div className={styles.driver_cards}>
+            <DriverDetailsCard name="vamsi" emp_id="HYD OUT 123456" />
+
+            <DriverDetailsCard name="ram" emp_id="HYD IN 123456" />
+          </div>
+        </Typography>
+      </AccordionDetails>
+    </Accordion>
+  );
+};
+
+export default DriverDetailsAccordian;
