@@ -1,0 +1,15 @@
+.assign_transport_container {
+  width: 100%;
+  padding: 10px;
+}
+.assign_transport_button {
+  border: none;
+  display: flex;
+  padding: 8px 34px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  background: #3425ff;
+  margin: 45px auto 0 auto;
+  cursor: pointer;
+}

@@ -21,3 +21,15 @@
 .live_track_container {
   width: 60%;
 }
+
+.button_class{
+   border:none;
+  display: flex;
+  padding: 8px 34px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  background: #3425ff;
+  margin: 35px auto 0 auto;
+  cursor: pointer;
+}

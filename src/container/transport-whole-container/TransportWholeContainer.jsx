@@ -3,13 +3,9 @@ import TransportLinks from "../../components/transport-links/TransportLinks";
 import AccordianContainer from "../accordian-container/AccordianContainer";
 import OverviewContainer from "../overview-container/OverviewContainer"; // your actual overview page
 import styles from "./TransportWholeContainer.module.css";
+import AssignTransportContainer from "../assign-transport-container/AssignTransportContainer";
 
-const AssignTransport = () => (
-  <div>
-    <h1>Assign Transport Page</h1>
-    <p>Content for Assign Transport</p>
-  </div>
-);
+
 const UnAssignTransport = () => (
   <div>
     <h1>Un Assign Transport Page</h1>
@@ -32,7 +28,7 @@ const TransportDropout = () => (
 const TransportWholeContainer = () => {
   const location = useLocation();
 
-  const showAccordion = location.pathname === "/overview";
+  const showAccordion = location.pathname === "/transport/overview";
 
   return (
     <div className={styles.transport_container}>
@@ -41,12 +37,12 @@ const TransportWholeContainer = () => {
         <TransportLinks />
 
         <Routes>
-          <Route index element={<Navigate to="/overview" />} />
-          <Route path="/overview" element={<OverviewContainer />} />
-          <Route path="/assign-transport" element={<AssignTransport />} />
-          <Route path="/un-assign-transport" element={<UnAssignTransport />} />
-          <Route path="/change-route" element={<ChangeRoute />} />
-          <Route path="/transport-dropout" element={<TransportDropout />} />
+          <Route index element={<Navigate to="/transport/overview" />} />
+          <Route path="/transport/overview" element={<OverviewContainer />} />
+          <Route path="/transport/assign-transport" element={<AssignTransportContainer />} />
+          <Route path="/transport/un-assign-transport" element={<UnAssignTransport />} />
+          <Route path="/transport/change-route" element={<ChangeRoute />} />
+          <Route path="/transport/transport-dropout" element={<TransportDropout />} />
         </Routes>
       </div>
 

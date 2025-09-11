@@ -4,11 +4,11 @@ import styles from "./TransportLinks.module.css";
 
 const TransportLinks = () => {
   const tabs = [
-    { label: "Overview", path: "/overview" },
-    { label: "Assign Transport", path: "/assign-transport" },
-    { label: "Un-Assign Transport", path: "/un-assign-transport" },
-    { label: "Change Route", path: "/change-route" },
-    { label: "Transport Dropout", path: "/transport-dropout" },
+    { label: "Overview", path: "/transport/overview" },
+    { label: "Assign Transport", path: "/transport/assign-transport" },
+    { label: "Un-Assign Transport", path: "/transport/un-assign-transport" },
+    { label: "Change Route", path: "/transport/change-route" },
+    { label: "Transport Dropout", path: "/transport/transport-dropout" },
   ];
 
   return (
