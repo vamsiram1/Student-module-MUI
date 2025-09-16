@@ -1,11 +1,38 @@
+.table_container {
+  background-color: #fff;
+  padding:10px;
+  display:flex;
+  flex-direction: column;
+  gap:15px;
+  border-radius:6px;
+}
+.title {
+  color: #393939;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.sub_title {
+  color: #575757;
+  padding-top: 4px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
 table {
-  width: 100%;
-  margin: 80px 0 0 0;
+
   font-size: 14px;
   border-radius: 10px;
   border: 1px solid #e5e9eb;
   overflow: hidden;
   border-bottom: none;
+  background-color: #fff;
 }
 
 th {

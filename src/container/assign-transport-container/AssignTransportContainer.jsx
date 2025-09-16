@@ -1,5 +1,5 @@
 import AssignTransportForm from "../../components/assign-transport-form/assign-transport-forms/AssignTransportForm";
-import AssignTransportTable from "../../components/assign-transport-form/assign-transport-table/AssignTransportTable";
+import AssignTransportTable from "../../components/assign-transport-form/transport-table/TransportTable";
 import TransportInnerTabHeader from "../../components/transport-innertab-header/TransportInnerTabHeader";
 import BlueButton from "../../widgets/blue-button/BlueButton";
 import styles from "./AssignTransportContainer.module.css";
@@ -16,7 +16,7 @@ const AssignTransportContainer = () => {
       
 
 
-      <AssignTransportTable/>
+      
     </div>
   );
 };
