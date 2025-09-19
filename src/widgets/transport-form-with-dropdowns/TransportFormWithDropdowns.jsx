@@ -1,9 +1,10 @@
+import React from "react";
 import { useFormik } from "formik";
-import BlueButton from "../../../widgets/blue-button/BlueButton";
-import FormDropDown from "../../../widgets/form-dropdown/FormDropDown";
-import styles from "./AssignTransportForm.module.css";
-
-const AssignTransportForm = () => {
+import BlueButton from "../blue-button/BlueButton";
+import FormDropDown from "../form-dropdown/FormDropDown";
+import styles from "./TransportFormWithDropdowns.module.css";
+// import InputBox from "../input-box/InputBox";
+const TransportForm = ({ buttonText }) => {
   const distanceOptions = [
     { label: "0 KM to 5 KM", value: "0-5" },
     { label: "5 KM to 10 KM", value: "5-10" },
@@ -38,7 +39,8 @@ const AssignTransportForm = () => {
       pickupPoint: null,
       droppingPoint: null,
       assignType: null,
-      busType: "NON-AC", // Default to NON-AC
+      remarks: null,
+      busType: "NON-AC",
     },
     onSubmit: (values) => {
       console.log("Form values:", values);
@@ -47,12 +49,27 @@ const AssignTransportForm = () => {
 
   // Handle the bus type selection (AC or NON-AC)
   const handleBusTypeClick = (type) => {
-    formik.setFieldValue("busType", type); // Update busType in Formik state
+    formik.setFieldValue("busType", type); 
   };
 
+
+
+
+
+  const assignedObject={
+    transportDistance:"hii",
+    routes:"route",
+    stopName:"stop",
+    pickupPoint:"pickup",
+    droppingpoint:"droping",
+    assignType:"assign",
+
+  }
   return (
     <div className={styles.forms_wrapper}>
-      <form className={styles.form_box} onSubmit={formik.handleSubmit}>
+      <form className={styles.form_box} 
+      // onSubmit={formik.handleSubmit}
+      >
         {/* Other form elements like dropdowns */}
         <div className={styles.forms_row}>
           <div className={styles.transport_form_container}>
@@ -60,10 +77,11 @@ const AssignTransportForm = () => {
             <FormDropDown
               options={distanceOptions}
               placeholder="select"
-              fieldName="transportDistance" // Map to the corresponding Formik field name
+              fieldName="transportDistance"
               value={formik.values.transportDistance}
               onChange={formik.handleChange}
             />
+            {/* <InputBox value /> */}
           </div>
           <div className={styles.transport_form_container}>
             <label className={styles.label_text}>Routes</label>
@@ -74,6 +92,7 @@ const AssignTransportForm = () => {
               value={formik.values.routes}
               onChange={formik.handleChange}
             />
+            {/* <InputBox /> */}
           </div>
         </div>
 
@@ -87,6 +106,7 @@ const AssignTransportForm = () => {
               value={formik.values.stopName}
               onChange={formik.handleChange}
             />
+            {/* <InputBox /> */}
           </div>
           <div className={styles.transport_form_container}>
             <label className={styles.label_text}>Pickup Point</label>
@@ -97,6 +117,7 @@ const AssignTransportForm = () => {
               value={formik.values.pickupPoint}
               onChange={formik.handleChange}
             />
+            {/* <InputBox /> */}
           </div>
         </div>
 
@@ -110,6 +131,7 @@ const AssignTransportForm = () => {
               value={formik.values.droppingPoint}
               onChange={formik.handleChange}
             />
+            {/* <InputBox /> */}
           </div>
           <div className={styles.transport_form_container}>
             <label className={styles.label_text}>Assign Type</label>
@@ -120,22 +142,42 @@ const AssignTransportForm = () => {
               value={formik.values.assignType}
               onChange={formik.handleChange}
             />
+
+            {/* <InputBox /> */}
           </div>
         </div>
 
         {/* Bus Type Selection */}
         <div className={styles.bustype_container}>
-          <label className={styles.label_text}>Bus Type</label>
-          <div className={styles.ac_and_nonac_buttons}>
-            <div className={`${styles.forms_row}`}>
-              <div
-                className={`${styles.ac_box} ${
-                  formik.values.busType === "AC" ? styles.active : ""
-                }`}
-                onClick={() => handleBusTypeClick("AC")}
-              >
-                {/* AC SVG icon */}
-                <svg
+          {/* remarks container */}
+          <div className={styles.remarks_container}>
+            <label className={styles.label_text}>
+              Remarks<span className={styles.important_star}>*</span>
+            </label>
+
+            <textarea
+              fieldName="remarks"
+              value={formik.values.transportDistance}
+              onChange={formik.handleChange}
+              id="remarks"
+              className={styles.remarks_box}
+              rows={4}
+              placeholder="Enter Reason"
+            />
+          </div>
+          <div className={styles.bus_type_box}>
+            <label className={styles.label_text}>Bus Type</label>
+            <div className={styles.ac_and_nonac_buttons}>
+              <div className={`${styles.forms_row}`}>
+                <div
+                  className={`${styles.ac_box}
+                  ${
+                    formik.values.busType === "AC" ? styles.active : ""
+                  }`}
+                  onClick={() => handleBusTypeClick("AC")}
+                >
+                  {/* AC SVG icon */}
+                  <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="27"
                   height="27"
@@ -166,19 +208,21 @@ const AssignTransportForm = () => {
                     stroke-linejoin="round"
                   />
                 </svg>
-                <p className={styles.ac_text}>AC</p>
+                  <p className={styles.ac_text}>AC</p>
+                </div>
               </div>
-            </div>
 
-            <div className={`${styles.forms_row}`}>
-              <div
-                className={`${styles.non_ac_box} ${
-                  formik.values.busType === "NON-AC" ? styles.active : ""
-                }`}
-                onClick={() => handleBusTypeClick("NON-AC")}
-              >
-                {/* Non-AC SVG icon */}
-                <svg
+              <div className={`${styles.forms_row}`}>
+                <div
+                  className={`${styles.non_ac_box}  
+                  ${
+                    formik.values.busType === "NON-AC" ? styles.active : ""
+                  }`}
+                 
+                  onClick={() => handleBusTypeClick("NON-AC")}
+                >
+                  {/* Non-AC SVG icon */}
+                  <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="27"
                   height="27"
@@ -208,15 +252,15 @@ const AssignTransportForm = () => {
                     stroke-linecap="round"
                   />
                 </svg>
-                <p className={styles.non_ac_text}>Non-AC</p>
+                  <p className={styles.non_ac_text}>Non-AC</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </form>
-
       <BlueButton
-        buttonText="Assign Transport"
+        buttonText={buttonText}
         classname={styles.assign_transport_button}
       />
 
@@ -228,4 +272,4 @@ const AssignTransportForm = () => {
   );
 };
 
-export default AssignTransportForm;
+export default TransportForm;
